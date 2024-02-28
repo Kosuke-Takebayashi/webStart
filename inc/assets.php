@@ -3,6 +3,7 @@
 function ws_register_style()
 {
     wp_enqueue_style('ws-header-style', get_template_directory_uri() . '/assets/css/header.css');
+    wp_enqueue_style('ws-main-style', get_template_directory_uri() . '/assets/css/main.css');
     wp_enqueue_style('ws-footer-style', get_template_directory_uri() . '/assets/css/footer.css');
 }
 

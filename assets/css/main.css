@@ -1,0 +1,22 @@
+.site-main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.home .content-wrapper {
+    display: flex;
+}
+
+.home .content-wrapper .post {
+    margin-right: 30px;
+}
+
+.home .content-wrapper .post:last-child {
+    margin-right: 0;
+}
+
+.entry-title a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+}
