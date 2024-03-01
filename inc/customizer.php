@@ -59,3 +59,42 @@ function webstart_customize_preview_js() {
 	wp_enqueue_script( 'webstart-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'webstart_customize_preview_js' );
+
+/**
+ * メニューを追加
+ */
+function my_customizer_menu($wp_customize)
+{
+
+	$wp_customize->add_panel(
+		'my_panel',
+		array(
+			'title'    => 'パネル名',
+			'priority' => 1,
+		)
+	);
+
+	$wp_customize->add_section(
+		'my_section',
+		array(
+			'title'    => 'セクション名',
+			'panel'    => 'my_panel',
+			'priority' => 1,
+		)
+	);
+
+	$wp_customize->add_setting('my_setting');
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'my_control',
+			array(
+				'label'    => 'コントロールの見出し',
+				'section'  => 'my_section',
+				'settings' => 'my_setting',
+				'priority' => 1,
+			)
+		)
+	);
+}
+add_action('customize_register', 'my_customizer_menu');

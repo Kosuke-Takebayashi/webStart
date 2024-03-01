@@ -1,14 +1,16 @@
-.site-main {
+.site-main {}
+
+.site-layout-container {
     max-width: 1000px;
     margin: auto;
 }
 
 .home .content-wrapper {
-    display: flex;
+    /* display: flex; */
 }
 
 .home .content-wrapper .post {
-    margin-right: 30px;
+    /* margin-right: 30px; */
 }
 
 .home .content-wrapper .post:last-child {
