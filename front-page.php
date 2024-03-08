@@ -3,7 +3,7 @@
 get_header();
 ?>
 
-<main id="primary" class="site-layout-container">
+<main id="primary" class="site-layout-container content-width">
 
     <div class="content-wrapper">
 
