@@ -6,6 +6,8 @@
  * @package webStart
  */
 
+use function PHPSTORM_META\type;
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -210,8 +212,22 @@ function webstart_header_menu($wp_customize)
 				'section'  => 'pc_section',
 				'settings' => 'my_header_contact',
 				'priority' => 1,
+				'type' => 'checkbox',
 			)
 		)
 	);
 }
 add_action('customize_register', 'webstart_header_menu');
+
+function webstart_add_header_contact()
+{
+	$isShowContact = get_theme_mod('my_header_contact');
+
+	if ($isShowContact) {
+		$a = '電話番号：00000000000';
+	}
+
+	echo $a;
+}
+
+add_action('add_header_contact', 'webstart_add_header_contact');

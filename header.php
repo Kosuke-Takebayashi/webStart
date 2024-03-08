@@ -27,7 +27,10 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'webstart'); ?></a>
 
+		<?php do_action('add_header_contact'); ?>
+
 		<header id="masthead" class="site-header">
+
 			<div class="site-branding">
 				<?php
 				the_custom_logo();
