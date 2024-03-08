@@ -72,7 +72,7 @@ function my_customizer_menu($wp_customize)
 {
 
 	$wp_customize->add_panel(
-		'pc_panel',
+		'content_width',
 		array(
 			'title'    => 'コンテンツ幅',
 			'priority' => 1,
@@ -83,7 +83,7 @@ function my_customizer_menu($wp_customize)
 		'pc_section',
 		array(
 			'title'    => 'PC',
-			'panel'    => 'pc_panel',
+			'panel'    => 'content_width',
 			'priority' => 1,
 		)
 	);
@@ -92,7 +92,7 @@ function my_customizer_menu($wp_customize)
 		'tb_section',
 		array(
 			'title'    => 'タブレット',
-			'panel'    => 'pc_panel',
+			'panel'    => 'content_width',
 			'priority' => 2,
 		)
 	);
