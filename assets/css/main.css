@@ -22,3 +22,8 @@
     text-decoration: none;
     color: #333;
 }
+
+.flex-container {
+    display: flex;
+    gap: 5%;
+}
