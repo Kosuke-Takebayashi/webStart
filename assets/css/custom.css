@@ -1,0 +1,23 @@
+/*------------------------------------------
+ 見出しの装飾
+-------------------------------------------*/
+h2.wp-block-heading {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding-left: 0.6em;
+}
+
+h2::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    background-color: #ddd;
+}
+
+h3.wp-block-heading {
+    border-bottom: 1px solid #ddd;
+}
