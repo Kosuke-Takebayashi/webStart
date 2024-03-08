@@ -68,7 +68,7 @@ add_action('customize_preview_init', 'webstart_customize_preview_js');
 /**
  * コンテンツ幅のメニューを追加
  */
-function my_customizer_menu($wp_customize)
+function webstart_contentWidth_menu($wp_customize)
 {
 
 	$wp_customize->add_panel(
@@ -147,7 +147,7 @@ function my_customizer_menu($wp_customize)
 	// 	)
 	// );
 }
-add_action('customize_register', 'my_customizer_menu');
+add_action('customize_register', 'webstart_contentWidth_menu');
 
 function webstart_add_contentWidth_css()
 {
@@ -176,3 +176,42 @@ function webstart_add_contentWidth_css()
 <?php
 }
 add_action('wp_head', 'webstart_add_contentWidth_css');
+
+/**
+ * コンテンツ幅のメニューを追加
+ */
+function webstart_header_menu($wp_customize)
+{
+
+	$wp_customize->add_panel(
+		'header_menu',
+		array(
+			'title'    => 'ヘッダー',
+			'priority' => 5,
+		)
+	);
+
+	$wp_customize->add_section(
+		'pc_section',
+		array(
+			'title'    => 'お問い合わせ',
+			'panel'    => 'header_menu',
+			'priority' => 1,
+		)
+	);
+
+	$wp_customize->add_setting('my_header_contact');
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'my_control',
+			array(
+				'label'    => '表示する',
+				'section'  => 'pc_section',
+				'settings' => 'my_header_contact',
+				'priority' => 1,
+			)
+		)
+	);
+}
+add_action('customize_register', 'webstart_header_menu');
