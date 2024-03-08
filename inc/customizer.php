@@ -152,8 +152,8 @@ add_action('customize_register', 'my_customizer_menu');
 function webstart_add_contentWidth_css()
 {
 	// 設定した最大幅を取得
-	$contentWidth = get_theme_mod('my_contentWidth');
-	$contentWidthTb = get_theme_mod('my_contentWidthTb');
+	$contentWidth = htmlspecialchars(get_theme_mod('my_contentWidth'));
+	$contentWidthTb = htmlspecialchars(get_theme_mod('my_contentWidthTb'));
 	// $contentWidthSp = get_theme_mod('my_contentWidthSp');
 ?>
 	<style type="text/css">
